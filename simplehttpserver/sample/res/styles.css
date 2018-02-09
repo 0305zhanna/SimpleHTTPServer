@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+@page {
+  size: 1024px 768px;
+  margin: 0;
+}
+
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/*
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+*/
+
+
+.dense .remark-code {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+.dense li { 
+	line-height: 1.5em; 
+} 
+
+.dense p { 
+    line-height: 0.8em;
+} 
+
+.remark-code, .remark-inline-code { 
+	background: #e7e8e2;
+	font-family: 'Ubuntu Mono'; 
+	padding: 3px;
+	border-radius: 5px;	
+}
+
+.remark-code-line-highlighted {
+    background-color: rgba(155,155,100, 0.4);
+}
+
+.footer { 
+	position: absolute; 
+	left: 5%;
+	bottom: 3em;
+	width: 90%;
+}
+
+.pull-left {
+	float: left;
+	width: 50%;
+}
+
+.pull-right {
+	float: right;
+	width: 50%;
+}
+
+.pull-right-abit {
+	float: right;
+	width: 70%;
+}
+
+.img-fit img{
+	width: 100%;
+	height: auto;
+}
+
+.img-height500 img{
+    width: auto;
+	height: 500px;
+}
+
+.red { color: #f00000; }
+.green { color: #00f000; }
+
+body { 
+	font-family: 'Droid Serif'; 
+	line-height: 1.5em;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Yanone Kaffeesatz';
+	font-weight: normal;
+}
+
+blockquote {
+	margin: 15px 0;
+	border-left: 4px solid #DDD;
+	padding: 0 15px;
+	color: #777; 
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+li { 
+	line-height: 2em; 
+}
+
+td,
+th {
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+
