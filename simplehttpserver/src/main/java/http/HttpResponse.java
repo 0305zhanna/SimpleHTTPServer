@@ -36,12 +36,12 @@ public class HttpResponse {
                     return;
                 }
 
-                if(Files.isDirectory(path)){
+                if (Files.isDirectory(path)) {
                     sendFilesList(path);
                     fillHeaders(HttpStatus.OK);
 //                    fillBody("<h1>Unsupported operation</h1>");
                     return;
-                }else {
+                } else {
                     logger.debug("file found!");
                     //transfer to file
                     sendFile(path);
@@ -62,16 +62,16 @@ public class HttpResponse {
         // write emty line
         writeString(os, "");
         // write body
-        if(body != null)
+        if (body != null)
             os.write(body);
-        os.flush();
+//        os.flush();
     }
 
     private void writeString(OutputStream os, String s) {
         try {
             os.write((s + "\r\n").getBytes(UTF_8));
         } catch (IOException e) {
-            logger.debug("",e);
+            logger.debug("", e);
         }
     }
 
@@ -90,23 +90,25 @@ public class HttpResponse {
             body = Files.readAllBytes(path);
             fillHeaders(HttpStatus.OK);
         } catch (IOException e) {
-            logger.debug("",e);
+            logger.debug("", e);
             fillHeaders(HttpStatus.SERVER_ERROR);
             fillBody("<h1>Error showing file</h1>");
         }
     }
+
     private void sendFilesList(Path path) {
         try {
             File file = path.toFile();
             File[] arrFiles = file.listFiles();
+
             String b = "";
             for (int i = 0; i < arrFiles.length; i++) {
-                b+=String.format("<p><a href=\"%s\">%s</a></p>%n",arrFiles[i].getCanonicalPath(),arrFiles[i].getName());
+                b += String.format("<p><a href=\"%s\">%s</a></p>%n", arrFiles[i].getPath().substring(1), arrFiles[i].getName());
             }
             fillBody(b);
             fillHeaders(HttpStatus.OK);
-        } catch (IOException e) {
-            logger.debug("",e);
+        } catch (Exception e) {
+            logger.debug("", e);
             fillHeaders(HttpStatus.SERVER_ERROR);
             fillBody("<p>Error showing file</p>");
         }
